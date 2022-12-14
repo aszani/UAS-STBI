@@ -15,16 +15,16 @@ Jawab:
 Pada proyek kami diterapkan penggunaan Top k-accuracy-score yang merupakan salah satu model evaluasi untuk menggeneralisasi suatu prediksi dari akurasi skor. Prediksi suatu informasi menggunakan Information Retrieval umumnya kalkulasi dari banyak item yang relevan dan tidak relevan, yang akan mengarah ke rekomendasi informasi tertentu. Evaluasi dengan Top k-accuracy-score dapat digunakan dalam kasus klasifikasi biner dan multiclass. Performa sistem dievaluasi dengan membandingkan penyakit yang diprediksi dengan diagnosis penyakit pada data rekam medis pasien. Sehubungan dengan setiap hasil gejala kami menampilkan 10 penyakit yang sesuai maka digunakan K-Fold = 10. Evaluasi sistem prediksi penyakit menggunakan 2 data uji yaitu yang hanya memiliki 105 daftar gejala dan label penyakitnya dan data yang telah diaugmentasi dengan mengkombinasikan gejala yang dimasukkan sehingga diperoleh 190 data tambahan menjadi 295 data untuk diuji hasil prediksinya. Berdasarkan hasil evaluasi sistem menggunakan Top k-accuracy-score diperoleh perbandingan seperti berikut: 
 
 K-Fold	TF-IDF (105 Data)	Cosine Similarity (105 Data)	TF-IDF (295 Data)	Cosine Similarity (295 Data)
-1	0.057143	0.009524	0.061017	0.00339
-2	0.085714	0.019048	0.091525	0.00678
-3	0.12381	0.028571	0.128814	0.010169
-4	0.12381	0.038095	0.142373	0.013559
-5	0.152381	0.047619	0.189831	0.040678
-6	0.161905	0.057143	0.19661	0.044068
-7	0.161905	0.066667	0.19661	0.088136
-8	0.161905	0.07619	0.19661	0.111864
-9	0.161905	0.085714	0.20339	0.155932
-10	0.161905	0.095238	0.20339	0.159322
+1	  0.057143	0.009524	0.061017	0.00339
+2	  0.085714	0.019048	0.091525	0.00678
+3	  0.12381	  0.028571	0.128814	0.010169
+4	  0.12381	  0.038095	0.142373	0.013559
+5	  0.152381	0.047619	0.189831	0.040678
+6	  0.161905	0.057143	0.19661	  0.044068
+7	  0.161905	0.066667	0.19661	  0.088136
+8	  0.161905	0.07619	  0.19661	  0.111864
+9	  0.161905	0.085714	0.20339	  0.155932
+10	0.161905	0.095238	0.20339	  0.159322
 
 Pada TF-IDF hasil akurasi prediksi penyakit dengan k prediksi dengan nilai tertinggi yaitu pada k = 10 akurasinya hanya 16% sedangkan setelah dilakukan augmentasi pada data ujinya, akurasi k = 10 prediksi meningkat dengan kenaikan pada k = 1 sekitar 1% dan k = 10 sekitar 4% menjadi 20%. Hasil akurasi pada metode cosine similarity secara keseluruhan lebih rendah dari akurasi dengan metode TF-IDF dengan tingkat prediksi tertinggi pada k = 10 yaitu 9, 5% dan dengan data uji yang diaugmentasi mengalami penurunan akurasi untuk k = 1 sampai k = 6. Nilai akurasi meningkat pada k = 7 hingga k = 10 dengan akurasi paling tinggi yaitu mendekati 16%.
 Peningkatan hasil akurasi pada data uji yang telah diaugmentasi ini dianalisis bahwa masukkan gejala yang relevan tentunya akan meningkatkan akurasi prediksi penyakitnya. Pada data uji yang kami gunakan pada penelitian ini meskipun data telah diaugmentasi menjadi hampir 3 kali lebih besar dari data uji sebelumnya diperoleh peningkatan hasil akurasi yang tidak terlalu besar. Hal tersebut dianggap bahwa masukkan gejala yang tidak relevan terhadap penyakitnya tidak akan mempengaruhi hasil prediksinya.
